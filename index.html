@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Betül Celep, PMP® — project and programme management, monitoring and evaluation, and gender equality and social inclusion (GESI)." />
-  <title>Betül Celep | Programme Management, M&E and GESI</title>
+  <meta name="description" content="Betül Celep — Monitoring, Evaluation, Learning, Project Management and Gender specialist." />
+  <title>Betül Celep | MEL & Evaluation Portfolio</title>
 
   <style>
     :root {
-      --bg: #f9f7f8;
+      --bg: #f6f8fb;
       --surface: #ffffff;
-      --text: #1c1720;
-      --muted: #6b616a;
-      --accent: #733050;
-      --accent-dark: #56223b;
-      --line: #e8e0e5;
-      --soft: #fbeaf0;
-      --shadow: 0 12px 30px rgba(28, 23, 32, 0.08);
+      --text: #172033;
+      --muted: #5f6b7a;
+      --accent: #1f4e79;
+      --accent-dark: #153a5b;
+      --line: #dfe5ec;
+      --soft: #eaf1f7;
+      --shadow: 0 12px 30px rgba(23, 32, 51, 0.08);
       --radius: 18px;
       --max-width: 1120px;
     }
@@ -55,9 +55,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(249, 247, 248, 0.93);
+      background: rgba(246, 248, 251, 0.93);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(232, 224, 229, 0.9);
+      border-bottom: 1px solid rgba(223, 229, 236, 0.9);
     }
 
     .nav {
@@ -143,7 +143,7 @@
     .button-primary {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 10px 20px rgba(115, 48, 80, 0.18);
+      box-shadow: 0 10px 20px rgba(31, 78, 121, 0.18);
     }
 
     .button-primary:hover {
@@ -164,7 +164,7 @@
 
     .profile-card {
       padding: 30px;
-      background: linear-gradient(145deg, #ffffff, #f7edf1);
+      background: linear-gradient(145deg, #ffffff, #edf3f8);
       border: 1px solid var(--line);
       border-radius: 26px;
       box-shadow: var(--shadow);
@@ -247,7 +247,7 @@
     .about-panel p {
       margin: 0;
       font-size: 1.08rem;
-      color: #3a3340;
+      color: #354052;
     }
 
     .expertise-grid,
@@ -286,6 +286,66 @@
     .card p {
       margin: 0;
       color: var(--muted);
+    }
+
+    /* --- Theses section --- */
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .thesis-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thesis-label {
+      align-self: flex-start;
+      padding: 6px 10px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .thesis-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .thesis-meta {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .thesis-card p.abstract {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .thesis-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: auto;
+      padding-top: 28px;
+    }
+
+    .thesis-links a {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .thesis-links a:hover {
+      color: var(--accent-dark);
     }
 
     .portfolio-card {
@@ -328,7 +388,7 @@
       background: var(--accent);
       color: #fff;
       border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(115, 48, 80, 0.22);
+      box-shadow: 0 20px 40px rgba(31, 78, 121, 0.22);
     }
 
     .cta h2 {
@@ -365,7 +425,8 @@
     @media (max-width: 900px) {
       .hero-grid,
       .expertise-grid,
-      .portfolio-grid {
+      .portfolio-grid,
+      .thesis-grid {
         grid-template-columns: 1fr;
       }
 
@@ -420,6 +481,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
+        <a href="#theses">Theses</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -430,12 +492,12 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Programme management • Monitoring &amp; evaluation • GESI</span>
+          <span class="eyebrow">Monitoring • Evaluation • Learning</span>
           <h1>Turning evidence into better programmes.</h1>
           <p class="hero-subtitle">
-            Project Management Professional (PMP®) with 14 years in programme management, monitoring
-            and evaluation of donor-funded development programmes, and an academically grounded
-            gender equality and social inclusion perspective.
+            I am a monitoring, evaluation and project management professional with experience in
+            results-based management, grant programmes, public-sector projects, gender equality
+            and data-informed decision-making.
           </p>
 
           <div class="hero-actions">
@@ -446,8 +508,8 @@
 
         <aside class="profile-card" aria-label="Professional profile">
           <div class="profile-monogram">BC</div>
-          <h2>Şaziye Betül Celep, PMP®</h2>
-          <p>Project &amp; Programme Management · Monitoring &amp; Evaluation · Gender Equality &amp; Social Inclusion</p>
+          <h2>Betül Celep, PMP</h2>
+          <p>MEL • Evaluation • Project Management • Gender</p>
 
           <div class="quick-facts">
             <div class="fact">
@@ -456,19 +518,11 @@
             </div>
             <div class="fact">
               <strong>Focus areas</strong>
-              Results-based management, evaluation design, donor compliance, GESI
-            </div>
-            <div class="fact">
-              <strong>Education</strong>
-              MA Gender Studies · MSc Financial Mathematics · BSc Mathematics
+              Theory of Change, RBM, evaluation design, grant monitoring
             </div>
             <div class="fact">
               <strong>Tools</strong>
-              Power BI, Excel (advanced), SPSS, R, MATLAB, KoboToolbox
-            </div>
-            <div class="fact">
-              <strong>Languages</strong>
-              Turkish (native), English (C1), German (B2)
+              Power BI, SPSS, R, MATLAB
             </div>
           </div>
         </aside>
@@ -486,13 +540,11 @@
 
         <div class="about-panel">
           <p>
-            My work combines programme management, monitoring and evaluation, stakeholder coordination
-            and quantitative analysis. I served as M&amp;E Focal Point for the USD 400 million,
-            World Bank-financed Socially Inclusive Green Transition (SoGreen) Project while overseeing
-            a portfolio of eleven publicly funded development projects, and spent seven years coordinating
-            civil-society projects across five cities. An MA in Gender Studies underpins the intersectional
-            lens I bring to programme design and evaluation. My portfolio focuses on practical MEL products:
-            evaluation matrices, theories of change, indicator frameworks, technical papers and Power BI dashboards.
+            My work combines programme design, monitoring and evaluation, stakeholder coordination,
+            quantitative analysis and learning. I have contributed to public grant programmes, regional
+            development planning, project portfolio monitoring and civil-society initiatives. My current
+            portfolio focuses on practical MEL products, including evaluation matrices, theories of change,
+            indicator frameworks, technical papers and Power BI dashboards.
           </p>
         </div>
       </div>
@@ -503,109 +555,95 @@
         <div class="section-heading">
           <h2>Core expertise</h2>
           <p>
-            Designing monitoring and evaluation systems that small teams can actually run —
-            and that produce evidence strong enough to defend.
+            Areas in which I bring together analytical thinking, implementation experience and clear reporting.
           </p>
         </div>
 
         <div class="expertise-grid">
           <article class="card">
             <span class="card-number">01</span>
-            <h3>Programme &amp; Grant Management</h3>
-            <p>
-              Project cycle and work plan management, budget utilisation and procurement monitoring,
-              risk review and donor compliance across World Bank-financed and publicly funded
-              programmes, including proposal appraisal on evaluation committees.
-            </p>
+            <h3>Monitoring & Evaluation</h3>
+            <p>Results frameworks, indicator design, evaluation questions, data sources and reporting structures.</p>
           </article>
 
           <article class="card">
             <span class="card-number">02</span>
-            <h3>Monitoring &amp; Evaluation Systems</h3>
-            <p>
-              Designing and operating M&amp;E systems that the organisation running them can sustain:
-              indicator sets with a named internal use, field monitoring routines, traceable figures
-              and reporting that is filtered from one register rather than reconstructed each time.
-            </p>
+            <h3>Programme & Grant Management</h3>
+            <p>Technical and financial monitoring, risk review, implementation follow-up and stakeholder coordination.</p>
           </article>
 
           <article class="card">
             <span class="card-number">03</span>
-            <h3>Theory of Change &amp; Results Frameworks</h3>
-            <p>
-              Making implicit causal logic explicit and agreed, so that results frameworks and
-              performance indicators match what a programme is actually trying to change rather
-              than what is easiest to count.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card-number">04</span>
-            <h3>Evaluation Design &amp; Methods</h3>
-            <p>
-              Evaluation questions, mixed-methods designs and evaluation matrices — including
-              credible treatment of outcomes that resist measurement, stated with their limits
-              rather than over-claimed.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card-number">05</span>
-            <h3>Gender Equality &amp; Social Inclusion</h3>
-            <p>
-              MA in Gender Studies with a thesis on intersectionality, applied as a gender-responsive
-              lens in programme design, indicator and disaggregation choices, policy analysis and
-              capacity development for women, youth and vulnerable groups.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card-number">06</span>
-            <h3>Quantitative Analysis &amp; Data Products</h3>
-            <p>
-              A mathematics and statistics background applied to socio-economic research, composite
-              indices and analytical reporting — from the MATLAB-based Istanbul Competitiveness Index
-              to Power BI monitoring dashboards.
-            </p>
+            <h3>Gender & Social Inclusion</h3>
+            <p>Intersectional analysis, women's employment, participation, inclusion and gender-responsive programming.</p>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- ================= THESES / ACADEMIC WORK ================= -->
+    <section id="theses">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Master's theses</h2>
+          <p>
+            Academic research underpinning my analytical work — full texts available as PDF.
+          </p>
+        </div>
+
+        <div class="thesis-grid">
+          <!-- TEZ 1 -->
+          <article class="card thesis-card">
+            <span class="thesis-label">MA Thesis</span>
+            <h3>TEZ 1 BAŞLIĞI BURAYA</h3>
+            <p class="thesis-meta">Üniversite Adı, Enstitü / Program — YIL</p>
+            <p class="abstract">
+              Tezin 2–3 cümlelik özeti buraya. Araştırma sorusu, yöntem ve temel bulgu.
+            </p>
+            <div class="thesis-links">
+              <a href="thesis-1.pdf" target="_blank" rel="noopener noreferrer">Download PDF →</a>
+            </div>
+          </article>
+
+          <!-- TEZ 2 -->
+          <article class="card thesis-card">
+            <span class="thesis-label">MA Thesis</span>
+            <h3>TEZ 2 BAŞLIĞI BURAYA</h3>
+            <p class="thesis-meta">Üniversite Adı, Enstitü / Program — YIL</p>
+            <p class="abstract">
+              Tezin 2–3 cümlelik özeti buraya. Araştırma sorusu, yöntem ve temel bulgu.
+            </p>
+            <div class="thesis-links">
+              <a href="thesis-2.pdf" target="_blank" rel="noopener noreferrer">Download PDF →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =============== THESES SECTION ENDS HERE ================= -->
 
     <section id="portfolio">
       <div class="container">
         <div class="section-heading">
           <h2>Selected portfolio</h2>
           <p>
-            A writing sample is available below; the remaining items are in development and will
-            link to project pages and interactive dashboards.
+            The first items are under development. Each card can later link to a PDF, project page or interactive dashboard.
           </p>
         </div>
 
         <div class="portfolio-grid">
           <article class="card portfolio-card">
-            <span class="status">Available</span>
-            <h3>MEL System Assessment — Writing Sample</h3>
-            <p>
-              An abridged Phase 1 assessment of a volunteer-led urban research association's
-              monitoring system: findings, diagnosis and a proposed two-tier redesign.
-            </p>
-            <a href="writing-sample-mel-assessment.pdf" target="_blank" rel="noopener noreferrer"
-               aria-label="Open MEL system assessment writing sample as PDF">Read the PDF →</a>
-          </article>
-
-          <article class="card portfolio-card">
             <span class="status">In development</span>
             <h3>Women-UP Desk Evaluation</h3>
             <p>
-              A theory-based assessment of programme relevance, intervention logic and support for women’s formal employment.
+              A theory-based assessment of programme relevance, intervention logic and support for women's formal employment.
             </p>
             <a href="#" aria-label="Women-UP project page coming soon">Project page coming soon →</a>
           </article>
 
           <article class="card portfolio-card">
             <span class="status">Planned</span>
-            <h3>MEL Framework &amp; Evaluation Matrix</h3>
+            <h3>MEL Framework & Evaluation Matrix</h3>
             <p>
               A practical framework linking outcomes, indicators, evidence sources, methods and learning questions.
             </p>
@@ -616,7 +654,7 @@
             <span class="status">Planned</span>
             <h3>Power BI Dashboards</h3>
             <p>
-              Visual reporting products for project performance, women’s employment and programme monitoring.
+              Visual reporting products for project performance, women's employment and programme monitoring.
             </p>
             <a href="#" aria-label="Dashboard gallery coming soon">Dashboard gallery coming soon →</a>
           </article>
@@ -628,10 +666,9 @@
       <div class="container">
         <div class="cta">
           <div>
-            <h2>Let’s connect.</h2>
+            <h2>Let's connect.</h2>
             <p>
-              Available for evaluation assignments, MEL system design and programme monitoring work.
-              Ankara, Türkiye — working remotely and on assignment.
+              Add your LinkedIn profile or professional email address here when you are ready to publish them.
             </p>
           </div>
           <a class="button" href="https://www.linkedin.com/in/betulcelep" target="_blank" rel="noopener noreferrer">LinkedIn</a>
