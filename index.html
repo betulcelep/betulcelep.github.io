@@ -331,6 +331,13 @@
       color: var(--muted);
     }
 
+    .thesis-original {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-style: italic;
+    }
+
     .thesis-links {
       display: flex;
       flex-wrap: wrap;
@@ -481,8 +488,8 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
-        <a href="#theses">Theses</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#theses">Theses</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -581,57 +588,25 @@
       </div>
     </section>
 
-    <!-- ================= THESES / ACADEMIC WORK ================= -->
-    <section id="theses">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Master's theses</h2>
-          <p>
-            Academic research underpinning my analytical work — full texts available as PDF.
-          </p>
-        </div>
-
-        <div class="thesis-grid">
-          <!-- TEZ 1 -->
-          <article class="card thesis-card">
-            <span class="thesis-label">MA Thesis</span>
-            <h3>TEZ 1 BAŞLIĞI BURAYA</h3>
-            <p class="thesis-meta">Üniversite Adı, Enstitü / Program — YIL</p>
-            <p class="abstract">
-              Tezin 2–3 cümlelik özeti buraya. Araştırma sorusu, yöntem ve temel bulgu.
-            </p>
-            <div class="thesis-links">
-              <a href="thesis-1.pdf" target="_blank" rel="noopener noreferrer">Download PDF →</a>
-            </div>
-          </article>
-
-          <!-- TEZ 2 -->
-          <article class="card thesis-card">
-            <span class="thesis-label">MA Thesis</span>
-            <h3>TEZ 2 BAŞLIĞI BURAYA</h3>
-            <p class="thesis-meta">Üniversite Adı, Enstitü / Program — YIL</p>
-            <p class="abstract">
-              Tezin 2–3 cümlelik özeti buraya. Araştırma sorusu, yöntem ve temel bulgu.
-            </p>
-            <div class="thesis-links">
-              <a href="thesis-2.pdf" target="_blank" rel="noopener noreferrer">Download PDF →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <!-- =============== THESES SECTION ENDS HERE ================= -->
-
     <section id="portfolio">
       <div class="container">
         <div class="section-heading">
           <h2>Selected portfolio</h2>
           <p>
-            The first items are under development. Each card can later link to a PDF, project page or interactive dashboard.
+            A writing sample is available below; the remaining items are in development and will link to project pages and interactive dashboards.
           </p>
         </div>
 
         <div class="portfolio-grid">
+          <article class="card portfolio-card">
+            <span class="status">Available</span>
+            <h3>MEL System Assessment — Writing Sample</h3>
+            <p>
+              An abridged Phase 1 assessment of a volunteer-led urban research association's monitoring system: findings, diagnosis and a proposed two-tier redesign.
+            </p>
+            <a href="https://betulcelep.github.io/writing-sample-mel-assessment.pdf" target="_blank" rel="noopener noreferrer">Read the PDF →</a>
+          </article>
+
           <article class="card portfolio-card">
             <span class="status">In development</span>
             <h3>Women-UP Desk Evaluation</h3>
@@ -661,6 +636,58 @@
         </div>
       </div>
     </section>
+
+    <!-- ================= THESES / ACADEMIC WORK ================= -->
+    <section id="theses">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Master's theses</h2>
+          <p>
+            Two graduate degrees behind the work: quantitative modelling and intersectional gender analysis. Full texts available as PDF.
+          </p>
+        </div>
+
+        <div class="thesis-grid">
+          <article class="card thesis-card">
+            <span class="thesis-label">MA · Women's Studies</span>
+            <h3>Intersectionality Perspective in Examining Types of Social Inequality and Discrimination</h3>
+            <p class="thesis-meta">Istanbul University, Institute of Social Sciences — Women's Studies, 2024</p>
+            <p class="abstract">
+              Traces the conceptual history of intersectionality and how race-, class- and gender-based
+              discrimination shape one another in patterns of social inequality. The thesis reviews three
+              decades of empirical applications and the unresolved debate over whether intersectionality
+              works as a theory, a methodology or an analytical tool, alongside critiques from feminist
+              and classical Marxist positions.
+            </p>
+            <p class="thesis-original">
+              Original title (TR): Toplumsal Eşitsizlik ve Ayrımcılık Türlerinin İncelenmesinde Kesişimsellik Perspektifi · Thesis in Turkish
+            </p>
+            <div class="thesis-links">
+              <a href="thesis-2.pdf" target="_blank" rel="noopener noreferrer">Download PDF →</a>
+            </div>
+          </article>
+
+          <article class="card thesis-card">
+            <span class="thesis-label">MSc · Financial Mathematics</span>
+            <h3>Stochastic Volatility and Stochastic Interest Rate Model with Jump and Its Application on General Electric Data</h3>
+            <p class="thesis-meta">Middle East Technical University (METU), Institute of Applied Mathematics — Financial Mathematics, 2011</p>
+            <p class="abstract">
+              Compares two approaches to pricing European call options under stochastic volatility,
+              stochastic interest rates and jumps: closed-form solutions derived through characteristic
+              functions and martingale methods, and solutions to the partial integro-differential equation.
+              Four alternative models are then tested empirically on General Electric stock option data.
+            </p>
+            <p class="thesis-original">
+              Original title (TR): Sıçramalı Stokastik Volatilite ve Stokastik Faiz Oranı Modeli ve Modelinin General Electric Verisi Üzerine Uygulaması · Thesis in English
+            </p>
+            <div class="thesis-links">
+              <a href="thesis-1.pdf" target="_blank" rel="noopener noreferrer">Download PDF →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- =============== THESES SECTION ENDS HERE ================= -->
 
     <section id="contact">
       <div class="container">
