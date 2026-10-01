@@ -292,6 +292,13 @@
       font-size: 1.15rem;
     }
 
+    .project-date {
+      display: block;
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
     .card p {
       margin: 0;
       color: var(--muted);
@@ -661,6 +668,7 @@
           <article class="card portfolio-card">
             <span class="status">Classification · Credit risk</span>
             <h3>Loan Default Prediction</h3>
+            <time class="project-date" datetime="2026-10-02">Uploaded 2 October 2026</time>
             <p>
               End-to-end credit-risk model on 257,000 loan records: deduplication, detection and removal of two target-leakage sources, ratio features (loan-to-income, debt-to-income, credit utilisation) and a comparison of seven classifiers. Logistic Regression is recommended for transparency (ROC AUC 0.70); at a 0.5 threshold it cuts the default rate among approved loans from 27.4% to 17.6%.
             </p>
@@ -670,6 +678,7 @@
           <article class="card portfolio-card">
             <span class="status">Classification · Kaggle</span>
             <h3>Titanic Survival Prediction</h3>
+            <time class="project-date" datetime="2026-10-02">Uploaded 2 October 2026</time>
             <p>
               Predicts passenger survival on the Kaggle Titanic dataset. Missing ages are imputed with ticket-class medians, categorical variables are encoded, and Random Forest and Gradient Boosting classifiers generate predictions for the 418-passenger test set.
             </p>
