@@ -650,12 +650,21 @@
 
         <div class="portfolio-grid">
           <article class="card portfolio-card">
-            <span class="status">Machine learning · Clustering</span>
-            <h3>Airline Segmentation with K-Means</h3>
+            <span class="status">Classification · Credit risk</span>
+            <h3>Loan Default Prediction</h3>
             <p>
-              Which airlines have similar air-traffic characteristics? Clusters airlines in the San Francisco International Airport passenger statistics dataset using K-Means, with the number of clusters chosen by the Elbow Method.
+              End-to-end credit-risk model on 257,000 loan records: deduplication, detection and removal of two target-leakage sources, ratio features (loan-to-income, debt-to-income, credit utilisation) and a comparison of seven classifiers. Logistic Regression is recommended for transparency (ROC AUC 0.70); at a 0.5 threshold it cuts the default rate among approved loans from 27.4% to 17.6%.
             </p>
-            <a href="#" aria-label="Airline segmentation project coming soon">Project coming soon →</a>
+            <a href="https://github.com/betulcelep/betulcelep.github.io/blob/main/projects/loan-default-prediction.ipynb" target="_blank" rel="noopener noreferrer">View notebook →</a>
+          </article>
+
+          <article class="card portfolio-card">
+            <span class="status">Classification · Kaggle</span>
+            <h3>Titanic Survival Prediction</h3>
+            <p>
+              Predicts passenger survival on the Kaggle Titanic dataset. Missing ages are imputed with ticket-class medians, categorical variables are encoded, and Random Forest and Gradient Boosting classifiers generate predictions for the 418-passenger test set.
+            </p>
+            <a href="https://github.com/betulcelep/betulcelep.github.io/blob/main/projects/titanic-survival-classification.ipynb" target="_blank" rel="noopener noreferrer">View notebook →</a>
           </article>
         </div>
       </div>
