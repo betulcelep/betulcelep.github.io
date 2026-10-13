@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Data science and machine learning projects by Betül Celep: classification, regression and clustering with Python and scikit-learn." />
+  <title>Data Science Projects | Betül Celep</title>
+
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --accent: #1f4e79;
+      --accent-dark: #153a5b;
+      --line: #dfe5ec;
+      --soft: #eaf1f7;
+      --shadow: 0 12px 30px rgba(23, 32, 51, 0.08);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 248, 251, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(223, 229, 236, 0.9);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.9rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      max-width: 760px;
+    }
+
+    .hero-subtitle {
+      margin: 28px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 12px;
+      font-weight: 750;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(31, 78, 121, 0.18);
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .profile-card {
+      padding: 30px;
+      background: linear-gradient(145deg, #ffffff, #edf3f8);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-monogram {
+      width: 118px;
+      height: 118px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      background: var(--accent);
+      color: white;
+      font-size: 2.3rem;
+      font-weight: 850;
+      letter-spacing: -0.05em;
+    }
+
+    .profile-photo {
+      display: block;
+      width: 140px;
+      height: 140px;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    .profile-card h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .profile-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .quick-facts {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .fact {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 600px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-panel {
+      padding: 36px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel p {
+      margin: 0;
+      font-size: 1.08rem;
+      color: #354052;
+    }
+
+    .expertise-grid,
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 22px;
+      border-radius: 12px;
+      background: var(--soft);
+      color: var(--accent);
+      font-weight: 850;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      font-size: 1.15rem;
+    }
+
+    .project-date {
+      display: block;
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* --- Theses section --- */
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .thesis-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thesis-label {
+      align-self: flex-start;
+      padding: 6px 10px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .thesis-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .thesis-meta {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .thesis-card p.abstract {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .thesis-original {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-style: italic;
+    }
+
+    .thesis-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: auto;
+      padding-top: 28px;
+    }
+
+    .thesis-links a {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .thesis-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .portfolio-card {
+      position: relative;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .status {
+      align-self: flex-start;
+      padding: 6px 10px;
+      margin-bottom: 30px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .portfolio-card a {
+      margin-top: auto;
+      padding-top: 28px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .portfolio-card a:hover {
+      color: var(--accent-dark);
+    }
+
+    .cta {
+      padding: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(31, 78, 121, 0.22);
+    }
+
+    .cta h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -0.04em;
+    }
+
+    .cta p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .cta .button {
+      flex-shrink: 0;
+      background: #fff;
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 36px 0 52px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .expertise-grid,
+      .portfolio-grid,
+      .thesis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        max-width: 520px;
+      }
+
+      .section-heading,
+      .cta,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 68px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(calc(100% - 24px), var(--max-width));
+      }
+
+      h1 {
+        font-size: 3.1rem;
+      }
+
+      .hero-actions,
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .about-panel,
+      .card,
+      .cta,
+      .profile-card {
+        padding: 22px;
+      }
+    }
+
+    .page-intro { padding: 64px 0 8px; }
+    .back-link { display: inline-block; margin-bottom: 18px; color: var(--accent); font-weight: 750; }
+    .back-link:hover { text-decoration: underline; }
+    .page-intro h1 { margin: 0 0 12px; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; letter-spacing: -0.045em; }
+    .page-intro p { max-width: 680px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .projects-section { padding-top: 32px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .filter {
+      padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); color: var(--text); font: inherit; font-weight: 700; font-size: 0.92rem;
+      cursor: pointer; transition: 0.2s ease;
+    }
+    .filter span { color: var(--muted); font-weight: 600; margin-left: 4px; }
+    .filter:hover { border-color: var(--accent); color: var(--accent); }
+    .filter[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .filter[aria-pressed="true"] span { color: rgba(255,255,255,0.8); }
+    .portfolio-card[hidden] { display: none; }
+    .see-all { display: flex; justify-content: center; margin-top: 30px; }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Betül Celep</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#expertise">Expertise</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#data-science">Data Science</a>
+        <a href="index.html#theses">Theses</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="page-intro">
+      <div class="container">
+        <a class="back-link" href="index.html#data-science">← Back to main page</a>
+        <h1>Applied Data Science &amp; Machine Learning</h1>
+        <p>Project work from the <em>Mastering Applied Data Science with Deep Learning</em> programme, covering exploratory analysis, machine learning and deep learning on real-world datasets. Each project links to its own GitHub repository with the full notebook.</p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="container">
+        <div class="filters" role="group" aria-label="Filter projects by method">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>7</span></button>
+          <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>2</span></button>
+          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>2</span></button>
+          <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
+        </div>
+
+        <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="regression">
+            <span class="status">Regression · Feature engineering</span>
+            <h3>Laptop Price Prediction</h3>
+            <time class="project-date" datetime="2026-10-13">Uploaded 13 October 2026</time>
+            <p>
+              Predicts the price of 1,303 laptop models from their specifications. Raw text columns are turned into usable features: pixel density from screen size and resolution, separate SSD and HDD capacities, CPU groups and clock speed, GPU brand and touchscreen/IPS flags. Five models are compared on log price; XGBoost performs best (R² 0.90), ahead of a GridSearchCV-tuned Random Forest. RAM and SSD capacity emerge as the strongest price drivers.
+            </p>
+            <a href="https://github.com/betulcelep/laptop-price-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
+          <article class="card portfolio-card" data-category="clustering">
+            <span class="status">Clustering · Unsupervised learning</span>
+            <h3>World Military Power 2020</h3>
+            <time class="project-date" datetime="2026-10-13">Uploaded 13 October 2026</time>
+            <p>
+              Groups 138 countries by military capability using K-Means on 28 indicators covering air, land and naval forces, defense spending, manpower and geography. After correcting a data misalignment and treating structural missing values (landlocked and island countries), three profiles emerge: Major Powers, Regional Powers and Limited Capacity. The Global Firepower Power Index, left out of the model, ranks the clusters in the same order, independently validating the result.
+            </p>
+            <a href="https://github.com/betulcelep/world-military-power-clustering" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
+          <article class="card portfolio-card" data-category="clustering">
+            <span class="status">Clustering · Customer analytics · SQL</span>
+            <h3>Customer Segmentation with RFM</h3>
+            <time class="project-date" datetime="2026-10-05">Uploaded 5 October 2026</time>
+            <p>
+              Segments 3,054 e-commerce customers for targeted marketing. Raw order data is split into customer, product and order tables in a SQLite database, then summarised as Recency, Frequency and Monetary values and clustered with K-Means (elbow, silhouette and business judgement). Four segments emerge: a loyal group of under 3% of customers brings in a fifth of revenue, while lapsed big spenders hold over half of it, the clearest target for a win-back campaign.
+            </p>
+            <a href="https://github.com/betulcelep/rfm-customer-segmentation-kmeans" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
+          <article class="card portfolio-card" data-category="regression">
+            <span class="status">Regression · Marketing analytics</span>
+            <h3>Advertising Spend and Sales</h3>
+            <time class="project-date" datetime="2026-10-04">Uploaded 4 October 2026</time>
+            <p>
+              Multiple linear regression predicting sales from TV, radio and newspaper advertising budgets across 200 markets. The model explains 91% of the variation in sales on held-out test data (RMSE 1.68). Holding other channels constant, radio delivers the largest sales gain per unit of spend, followed by TV, while newspaper spending adds almost nothing.
+            </p>
+            <a href="https://github.com/betulcelep/advertising-sales-prediction-linear-regression" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
+          <article class="card portfolio-card" data-category="clustering">
+            <span class="status">Clustering · Unsupervised learning</span>
+            <h3>SFO Airline Traffic Profiles</h3>
+            <time class="project-date" datetime="2026-10-03">Uploaded 3 October 2026</time>
+            <p>
+              Groups 65 airlines at San Francisco International Airport by traffic profile, using 13 years of monthly passenger records (2005–2018). Raw records are aggregated to one row per airline and described by passenger volume, domestic, low-fare, transit and long-haul shares. K-Means with elbow and silhouette analysis (silhouette 0.70) identifies six profiles, from long-haul international carriers to low-fare and regional domestic airlines.
+            </p>
+            <a href="https://github.com/betulcelep/sfo-air-traffic-passenger-clustering" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
+          <article class="card portfolio-card" data-category="classification">
+            <span class="status">Classification · Credit risk</span>
+            <h3>Loan Default Prediction</h3>
+            <time class="project-date" datetime="2026-10-02">Uploaded 2 October 2026</time>
+            <p>
+              End-to-end credit-risk model on 257,000 loan records: deduplication, detection and removal of two target-leakage sources, ratio features (loan-to-income, debt-to-income, credit utilisation) and a comparison of seven classifiers. Logistic Regression is recommended for transparency (ROC AUC 0.70); at a 0.5 threshold it cuts the default rate among approved loans from 27.4% to 17.6%.
+            </p>
+            <a href="https://github.com/betulcelep/bank-loan-default-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
+          <article class="card portfolio-card" data-category="classification">
+            <span class="status">Classification · Kaggle</span>
+            <h3>Titanic Survival Prediction</h3>
+            <time class="project-date" datetime="2026-10-02">Uploaded 2 October 2026</time>
+            <p>
+              Predicts passenger survival on the Kaggle Titanic dataset. Missing ages are imputed with ticket-class medians, categorical variables are encoded, and Random Forest and Gradient Boosting classifiers generate predictions for the 418-passenger test set.
+            </p>
+            <a href="https://github.com/betulcelep/titanic-survival-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 Betül Celep</span>
+      <span>Monitoring, Evaluation & Learning Portfolio</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.filter');
+      var cards = document.querySelectorAll('#project-grid .portfolio-card');
+      function apply(key) {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.filter === key ? 'true' : 'false'); });
+        cards.forEach(function (c) { c.hidden = !(key === 'all' || c.dataset.category === key); });
+      }
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          apply(b.dataset.filter);
+          if (history.replaceState) history.replaceState(null, '', b.dataset.filter === 'all' ? location.pathname : '#' + b.dataset.filter);
+        });
+      });
+      var start = location.hash.replace('#', '');
+      if (['classification', 'regression', 'clustering'].indexOf(start) !== -1) apply(start);
+    })();
+  </script>
+</body>
+</html>

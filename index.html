@@ -494,6 +494,11 @@
         padding: 22px;
       }
     }
+    .see-all {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
   </style>
 </head>
 
@@ -660,7 +665,7 @@
         <div class="section-heading">
           <h2>Applied Data Science &amp; Machine Learning</h2>
           <p>
-            Project work from the <em>Mastering Applied Data Science with Deep Learning</em> programme, covering exploratory analysis, machine learning and deep learning on real-world datasets.
+            Project work from the <em>Mastering Applied Data Science with Deep Learning</em> programme, covering exploratory analysis, machine learning and deep learning on real-world datasets. Three selected projects are shown below.
           </p>
         </div>
 
@@ -676,36 +681,6 @@
           </article>
 
           <article class="card portfolio-card">
-            <span class="status">Classification · Kaggle</span>
-            <h3>Titanic Survival Prediction</h3>
-            <time class="project-date" datetime="2026-10-02">Uploaded 2 October 2026</time>
-            <p>
-              Predicts passenger survival on the Kaggle Titanic dataset. Missing ages are imputed with ticket-class medians, categorical variables are encoded, and Random Forest and Gradient Boosting classifiers generate predictions for the 418-passenger test set.
-            </p>
-            <a href="https://github.com/betulcelep/titanic-survival-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
-          </article>
-
-          <article class="card portfolio-card">
-            <span class="status">Clustering · Unsupervised learning</span>
-            <h3>SFO Airline Traffic Profiles</h3>
-            <time class="project-date" datetime="2026-10-03">Uploaded 3 October 2026</time>
-            <p>
-              Groups 65 airlines at San Francisco International Airport by traffic profile, using 13 years of monthly passenger records (2005–2018). Raw records are aggregated to one row per airline and described by passenger volume, domestic, low-fare, transit and long-haul shares. K-Means with elbow and silhouette analysis (silhouette 0.70) identifies six profiles, from long-haul international carriers to low-fare and regional domestic airlines.
-            </p>
-            <a href="https://github.com/betulcelep/sfo-air-traffic-passenger-clustering" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
-          </article>
-
-          <article class="card portfolio-card">
-            <span class="status">Regression · Marketing analytics</span>
-            <h3>Advertising Spend and Sales</h3>
-            <time class="project-date" datetime="2026-10-04">Uploaded 4 October 2026</time>
-            <p>
-              Multiple linear regression predicting sales from TV, radio and newspaper advertising budgets across 200 markets. The model explains 91% of the variation in sales on held-out test data (RMSE 1.68). Holding other channels constant, radio delivers the largest sales gain per unit of spend, followed by TV, while newspaper spending adds almost nothing.
-            </p>
-            <a href="https://github.com/betulcelep/advertising-sales-prediction-linear-regression" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
-          </article>
-
-          <article class="card portfolio-card">
             <span class="status">Clustering · Customer analytics · SQL</span>
             <h3>Customer Segmentation with RFM</h3>
             <time class="project-date" datetime="2026-10-05">Uploaded 5 October 2026</time>
@@ -716,14 +691,18 @@
           </article>
 
           <article class="card portfolio-card">
-            <span class="status">Clustering · Unsupervised learning</span>
-            <h3>World Military Power 2020</h3>
+            <span class="status">Regression · Feature engineering</span>
+            <h3>Laptop Price Prediction</h3>
             <time class="project-date" datetime="2026-10-13">Uploaded 13 October 2026</time>
             <p>
-              Groups 138 countries by military capability using K-Means on 28 indicators covering air, land and naval forces, defense spending, manpower and geography. After correcting a data misalignment and treating structural missing values (landlocked and island countries), three profiles emerge: Major Powers, Regional Powers and Limited Capacity. The Global Firepower Power Index, left out of the model, ranks the clusters in the same order, independently validating the result.
+              Predicts the price of 1,303 laptop models from their specifications. Raw text columns are turned into usable features: pixel density from screen size and resolution, separate SSD and HDD capacities, CPU groups and clock speed, GPU brand and touchscreen/IPS flags. Five models are compared on log price; XGBoost performs best (R² 0.90), ahead of a GridSearchCV-tuned Random Forest. RAM and SSD capacity emerge as the strongest price drivers.
             </p>
-            <a href="https://github.com/betulcelep/world-military-power-clustering" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+            <a href="https://github.com/betulcelep/laptop-price-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
           </article>
+        </div>
+
+        <div class="see-all">
+          <a class="button button-secondary" href="projects.html">View all projects (7) →</a>
         </div>
       </div>
     </section>
