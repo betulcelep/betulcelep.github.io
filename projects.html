@@ -543,14 +543,24 @@
     <section class="projects-section">
       <div class="container">
         <div class="filters" role="group" aria-label="Filter projects by method">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>8</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>9</span></button>
           <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>2</span></button>
-          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>2</span></button>
+          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>3</span></button>
           <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
           <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>1</span></button>
         </div>
 
         <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="regression">
+            <span class="status">Regression · Real estate</span>
+            <h3>King County House Price Prediction</h3>
+            <time class="project-date" datetime="2026-10-16">Uploaded 16 October 2026</time>
+            <p>
+              Predicts sale prices for 21,613 homes in the Seattle area (2014–2015). After removing extreme outliers and engineering features such as house age, renovation and basement flags, zip-code categories and squared size variables, thirteen regression models are compared. XGBoost meets the project targets with R² 0.85 and RMSE of about $83,000, with Lasso and Ridge close behind.
+            </p>
+            <a href="https://github.com/betulcelep/king-county-house-price-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
           <article class="card portfolio-card" data-category="nlp">
             <span class="status">NLP · Sentiment analysis</span>
             <h3>Yelp Restaurant Review Sentiment Analysis</h3>
