@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Data science and machine learning projects by Betül Celep: classification, regression and clustering with Python and scikit-learn." />
+  <meta name="description" content="Data science and machine learning projects by Betül Celep: classification, regression, clustering and NLP with Python and scikit-learn." />
   <title>Data Science Projects | Betül Celep</title>
 
   <style>
@@ -543,13 +543,24 @@
     <section class="projects-section">
       <div class="container">
         <div class="filters" role="group" aria-label="Filter projects by method">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>7</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>8</span></button>
           <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>2</span></button>
           <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>2</span></button>
           <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
+          <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>1</span></button>
         </div>
 
         <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="nlp">
+            <span class="status">NLP · Sentiment analysis</span>
+            <h3>Yelp Restaurant Review Sentiment Analysis</h3>
+            <time class="project-date" datetime="2026-10-16">Uploaded 16 October 2026</time>
+            <p>
+              Analyses 10,417 Yelp reviews of Bacchanal Buffet in Las Vegas. Reviews are cleaned, language-filtered and lemmatised, then eight classifiers are compared across four text representations; Logistic Regression with n-grams performs best (accuracy 0.83). VADER and TextBlob scores, word clouds and n-gram counts show that complaints centre on long waits and value for money, while praise centres on the food, above all the crab legs.
+            </p>
+            <a href="https://github.com/betulcelep/yelp-restaurant-review-sentiment-analysis-nlp" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
           <article class="card portfolio-card" data-category="regression">
             <span class="status">Regression · Feature engineering</span>
             <h3>Laptop Price Prediction</h3>
@@ -646,7 +657,7 @@
         });
       });
       var start = location.hash.replace('#', '');
-      if (['classification', 'regression', 'clustering'].indexOf(start) !== -1) apply(start);
+      if (['classification', 'regression', 'clustering', 'nlp'].indexOf(start) !== -1) apply(start);
     })();
   </script>
 </body>
