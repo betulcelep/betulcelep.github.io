@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Data science and machine learning projects by Betül Celep: classification, regression, clustering and NLP with Python and scikit-learn." />
+  <meta name="description" content="Data science and machine learning projects by Betül Celep: classification, regression, clustering, NLP and deep learning with Python and scikit-learn." />
   <title>Data Science Projects | Betül Celep</title>
 
   <style>
@@ -543,14 +543,25 @@
     <section class="projects-section">
       <div class="container">
         <div class="filters" role="group" aria-label="Filter projects by method">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>9</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>10</span></button>
           <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>2</span></button>
           <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>3</span></button>
           <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
           <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>1</span></button>
+          <button class="filter" type="button" data-filter="deep-learning" aria-pressed="false">Deep Learning<span>1</span></button>
         </div>
 
         <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="deep-learning">
+            <span class="status">Deep learning · Keras</span>
+            <h3>Titanic Survival with a Neural Network</h3>
+            <time class="project-date" datetime="2026-10-18">Uploaded 18 October 2026</time>
+            <p>
+              A feed-forward neural network built with TensorFlow/Keras to predict Titanic passenger survival from six standardised features. Training for 100 epochs revealed clear overfitting, with validation accuracy falling from 0.88 to around 0.81. Retraining with early stopping on validation loss kept the best weights and held validation accuracy at about 0.87.
+            </p>
+            <a href="https://github.com/betulcelep/titanic-survival-prediction/blob/main/titanic-survival-deep-learning-keras.ipynb" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
           <article class="card portfolio-card" data-category="regression">
             <span class="status">Regression · Real estate</span>
             <h3>King County House Price Prediction</h3>
@@ -667,7 +678,7 @@
         });
       });
       var start = location.hash.replace('#', '');
-      if (['classification', 'regression', 'clustering', 'nlp'].indexOf(start) !== -1) apply(start);
+      if (['classification', 'regression', 'clustering', 'nlp', 'deep-learning'].indexOf(start) !== -1) apply(start);
     })();
   </script>
 </body>
