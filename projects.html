@@ -543,15 +543,25 @@
     <section class="projects-section">
       <div class="container">
         <div class="filters" role="group" aria-label="Filter projects by method">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>10</span></button>
-          <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>2</span></button>
-          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>3</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>11</span></button>
+          <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>3</span></button>
+          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>4</span></button>
           <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
-          <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>1</span></button>
-          <button class="filter" type="button" data-filter="deep-learning" aria-pressed="false">Deep Learning<span>1</span></button>
+          <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>2</span></button>
+          <button class="filter" type="button" data-filter="deep-learning" aria-pressed="false">Deep Learning<span>2</span></button>
         </div>
 
         <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="regression classification nlp deep-learning">
+            <span class="status">Regression · Classification · NLP · Deep learning</span>
+            <h3>OkCupid Profiles: Predicting Age and Generation</h3>
+            <time class="project-date" datetime="2026-10-23">Uploaded 23 October 2026</time>
+            <p>
+              Asks whether 9,506 OkCupid dating profiles reveal their owners' age and generation. Structured answers and TF-IDF features from the free-text essays feed regularised linear models, tree ensembles and Keras neural networks, with sensitive attributes deliberately excluded. The neural networks perform best (age RMSE 6.0 years, generation macro F1 0.65), and essay text alone predicts age better than all multiple-choice fields combined.
+            </p>
+            <a href="https://github.com/betulcelep/okcupid-profiles-age-prediction" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
           <article class="card portfolio-card" data-category="deep-learning">
             <span class="status">Deep learning · Keras</span>
             <h3>Titanic Survival with a Neural Network</h3>
@@ -669,7 +679,7 @@
       var cards = document.querySelectorAll('#project-grid .portfolio-card');
       function apply(key) {
         buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.filter === key ? 'true' : 'false'); });
-        cards.forEach(function (c) { c.hidden = !(key === 'all' || c.dataset.category === key); });
+        cards.forEach(function (c) { c.hidden = !(key === 'all' || c.dataset.category.split(' ').indexOf(key) !== -1); });
       }
       buttons.forEach(function (b) {
         b.addEventListener('click', function () {
