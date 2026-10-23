@@ -543,8 +543,8 @@
     <section class="projects-section">
       <div class="container">
         <div class="filters" role="group" aria-label="Filter projects by method">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>11</span></button>
-          <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>3</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>12</span></button>
+          <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>4</span></button>
           <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>4</span></button>
           <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
           <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>2</span></button>
@@ -552,6 +552,16 @@
         </div>
 
         <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="classification">
+            <span class="status">Classification · Predictive maintenance</span>
+            <h3>Device Failure Prediction for a Delivery Fleet</h3>
+            <time class="project-date" datetime="2026-10-23">Uploaded 23 October 2026</time>
+            <p>
+              Predicts device failures from 124,494 days of fleet telemetry, where only 0.09% of days are failures and accuracy is meaningless. Device-grouped splits, 7-day change features, class weights, SMOTE and threshold tuning are compared. A tuned Random Forest catches 62% of failures on unseen devices, but a simple rule based on recent sensor changes does as well with fewer false alarms, so the rule is recommended first.
+            </p>
+            <a href="https://github.com/betulcelep/device-failure-predictive-maintenance" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
           <article class="card portfolio-card" data-category="regression classification nlp deep-learning">
             <span class="status">Regression · Classification · NLP · Deep learning</span>
             <h3>OkCupid Profiles: Predicting Age and Generation</h3>
