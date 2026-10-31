@@ -543,15 +543,25 @@
     <section class="projects-section">
       <div class="container">
         <div class="filters" role="group" aria-label="Filter projects by method">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>12</span></button>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span>13</span></button>
           <button class="filter" type="button" data-filter="classification" aria-pressed="false">Classification<span>4</span></button>
-          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>4</span></button>
+          <button class="filter" type="button" data-filter="regression" aria-pressed="false">Regression<span>5</span></button>
           <button class="filter" type="button" data-filter="clustering" aria-pressed="false">Clustering<span>3</span></button>
           <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP<span>2</span></button>
           <button class="filter" type="button" data-filter="deep-learning" aria-pressed="false">Deep Learning<span>2</span></button>
         </div>
 
         <div class="portfolio-grid" id="project-grid">
+          <article class="card portfolio-card" data-category="regression">
+            <span class="status">Regression · Kaggle competition</span>
+            <h3>House Prices: Advanced Regression Techniques</h3>
+            <time class="project-date" datetime="2026-10-31">Uploaded 31 October 2026</time>
+            <p>
+              Predicts sale prices of homes in Ames, Iowa from 79 variables in the Kaggle competition. Missing values are filled according to their meaning, quality ratings become ordinal scales, and new features such as total floor area and total bathrooms are engineered. Gradient Boosting beats Random Forest (average error about $16,000) and reaches a Kaggle score of 0.135, closely matching its validation score.
+            </p>
+            <a href="https://github.com/betulcelep/house-prices-advanced-regression-techniques" target="_blank" rel="noopener noreferrer">View project on GitHub →</a>
+          </article>
+
           <article class="card portfolio-card" data-category="classification">
             <span class="status">Classification · Predictive maintenance</span>
             <h3>Device Failure Prediction for a Delivery Fleet</h3>
